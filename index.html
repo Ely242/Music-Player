@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="images/music-notes.png" type="image/x-icon">
+    <title>Music Player</title>
+</head>
+<body>
+    <div class="player">
+        <div class="search">
+            <input type="text" placeholder="Search for a song...">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <img src="images/burna-boy.png" alt="Album Art" class="album-art">
+        <div class="track-info">
+            <h1 class="track-title">Last Last</h1>
+            <h2 class="track-artist">Burna Boy</h2>
+        </div>
+        <!-- Progress Bar -->
+        <audio id="song">
+            <source src="audio/last-last.mp3" type="audio/mpeg">
+        </audio>
+        <input type="range" value="0" id="progress" min="0", step="0.01">
+        <!-- Control buttons -->
+        <div class="controls">
+            <button class="back" onclick="prevTrack()"><i class="fa-solid fa-backward"></i></button>
+            <button class="play" onclick="playPause()" id="ctrl"><i class="fa-solid fa-play"></i></button>
+            <button class="next" onclick="nextTrack()"><i class="fa-solid fa-forward"></i></button>
+        </div>
+        <div class="volume-control">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" min="0" max="100" value="20" class="volume-slider">
+            <i class="fas fa-volume-up"></i>
+        </div>
+    </div>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
